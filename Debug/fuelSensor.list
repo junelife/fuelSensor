@@ -10012,7 +10012,7 @@ int32_t CUSTOM_RANGING_SENSOR_SetPowerMode(uint32_t Instance, uint32_t PowerMode
  80035d0:	08000db1 	.word	0x08000db1
  80035d4:	08000de5 	.word	0x08000de5
  80035d8:	08000e19 	.word	0x08000e19
- 80035dc:	0000ebaa 	.word	0x0000ebaa
+ 80035dc:	0000eaaa 	.word	0x0000eaaa
  80035e0:	20000004 	.word	0x20000004
  80035e4:	200002e8 	.word	0x200002e8
  80035e8:	200002e4 	.word	0x200002e4

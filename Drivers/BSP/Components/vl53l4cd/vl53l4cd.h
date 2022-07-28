@@ -45,7 +45,7 @@ extern "C" {
 /** @defgroup VL53L4CD_Exported_Constants Exported Constants
   * @{
   */
-#define VL53L4CD_ID       (0xEBAAU)
+#define VL53L4CD_ID       (0xEAAAU)
 #define VL53L4CD_ID_REG   (0x010FU)
 
 #define VL53L4CD_DEVICE_ADDRESS      (0x52U)
