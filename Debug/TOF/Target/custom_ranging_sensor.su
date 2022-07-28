@@ -1,0 +1,14 @@
+../TOF/Target/custom_ranging_sensor.c:76:9:CUSTOM_RANGING_SENSOR_DeInit	8	static
+../TOF/Target/custom_ranging_sensor.c:102:9:CUSTOM_RANGING_SENSOR_ReadID	8	static
+../TOF/Target/custom_ranging_sensor.c:129:9:CUSTOM_RANGING_SENSOR_GetCapabilities	8	static
+../TOF/Target/custom_ranging_sensor.c:155:9:CUSTOM_RANGING_SENSOR_ConfigProfile	8	static
+../TOF/Target/custom_ranging_sensor.c:182:9:CUSTOM_RANGING_SENSOR_ConfigROI	8	static
+../TOF/Target/custom_ranging_sensor.c:213:9:CUSTOM_RANGING_SENSOR_ConfigIT	8	static
+../TOF/Target/custom_ranging_sensor.c:239:9:CUSTOM_RANGING_SENSOR_GetDistance	8	static
+../TOF/Target/custom_ranging_sensor.c:265:9:CUSTOM_RANGING_SENSOR_Start	8	static
+../TOF/Target/custom_ranging_sensor.c:290:9:CUSTOM_RANGING_SENSOR_Stop	8	static
+../TOF/Target/custom_ranging_sensor.c:316:9:CUSTOM_RANGING_SENSOR_SetAddress	8	static
+../TOF/Target/custom_ranging_sensor.c:342:9:CUSTOM_RANGING_SENSOR_GetAddress	8	static
+../TOF/Target/custom_ranging_sensor.c:368:9:CUSTOM_RANGING_SENSOR_SetPowerMode	16	static
+../TOF/Target/custom_ranging_sensor.c:35:9:CUSTOM_RANGING_SENSOR_Init	48	static
+../TOF/Target/custom_ranging_sensor.c:424:9:CUSTOM_RANGING_SENSOR_GetPowerMode	8	static
