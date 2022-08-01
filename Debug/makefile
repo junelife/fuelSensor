@@ -9,13 +9,8 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include TOF/Target/subdir.mk
--include TOF/App/subdir.mk
+-include Drivers/VL53L4CD/subdir.mk
 -include Drivers/STM32G0xx_HAL_Driver/Src/subdir.mk
--include Drivers/BSP/custom/subdir.mk
--include Drivers/BSP/Components/vl53l4cd/porting/subdir.mk
--include Drivers/BSP/Components/vl53l4cd/modules/subdir.mk
--include Drivers/BSP/Components/vl53l4cd/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk

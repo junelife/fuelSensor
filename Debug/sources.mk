@@ -23,11 +23,6 @@ C_DEPS :=
 SUBDIRS := \
 Core/Src \
 Core/Startup \
-Drivers/BSP/Components/vl53l4cd/modules \
-Drivers/BSP/Components/vl53l4cd/porting \
-Drivers/BSP/Components/vl53l4cd \
-Drivers/BSP/custom \
 Drivers/STM32G0xx_HAL_Driver/Src \
-TOF/App \
-TOF/Target \
+Drivers/VL53L4CD \
 

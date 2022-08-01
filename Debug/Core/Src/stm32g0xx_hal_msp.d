@@ -21,6 +21,10 @@ Core/Src/stm32g0xx_hal_msp.o: ../Core/Src/stm32g0xx_hal_msp.c \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_dmamux.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_dma_ex.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_cortex.h \
+ ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_adc.h \
+ ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_adc.h \
+ ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_adc_ex.h \
+ ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_adc_ex.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_exti.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_flash.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_flash_ex.h \
@@ -29,10 +33,11 @@ Core/Src/stm32g0xx_hal_msp.o: ../Core/Src/stm32g0xx_hal_msp.c \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_iwdg.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr_ex.h \
+ ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h \
+ ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h \
- ../Drivers/BSP/custom/custom.h ../Core/Inc/custom_conf.h \
- ../Drivers/BSP/custom/custom_errno.h
+ ../Drivers/VL53L4CD/VL53L4CD_api.h ../Drivers/VL53L4CD/platform.h
 ../Core/Inc/main.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:
 ../Core/Inc/stm32g0xx_hal_conf.h:
@@ -56,6 +61,10 @@ Core/Src/stm32g0xx_hal_msp.o: ../Core/Src/stm32g0xx_hal_msp.c \
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_dmamux.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_dma_ex.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_cortex.h:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_adc.h:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_adc.h:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_adc_ex.h:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_adc_ex.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_exti.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_flash.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_flash_ex.h:
@@ -64,8 +73,9 @@ Core/Src/stm32g0xx_hal_msp.o: ../Core/Src/stm32g0xx_hal_msp.c \
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_iwdg.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr_ex.h:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h:
-../Drivers/BSP/custom/custom.h:
-../Core/Inc/custom_conf.h:
-../Drivers/BSP/custom/custom_errno.h:
+../Drivers/VL53L4CD/VL53L4CD_api.h:
+../Drivers/VL53L4CD/platform.h:

@@ -1,2 +1,0 @@
-../TOF/App/app_tof.c:51:6:MX_TOF_Init	8	static
-../TOF/App/app_tof.c:73:6:MX_TOF_Process	64	static
