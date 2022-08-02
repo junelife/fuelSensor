@@ -304,26 +304,24 @@ void ADC_Calculate(adcToken target, uint8_t offset) {
 			Error_Handler();
     }
 
-    if (1) {
-		#ifdef DEBUG_STATE
-        switch (target) {
-			case ADC_INTERNAL_VREF:
-				printf("VDDA %ddmV %d\n", pointerB->voltage, pointerB->ripple);
-				break;
-			case ADC_INTERNAL_TEMP:
-				printf("TEMP %ddC %d\n", pointerB->temperature, pointerB->ripple);
-				break;
-    		case ADC_PERSONALITY_ID:
-    			printf("PERSONALITY %ddmV %d\n", pointerB->voltage, pointerB->ripple);
-    			break;
-			case ADC_BOARD_REV:
-				printf("BOARD REV %ddmV %d\n", pointerB->voltage, pointerB->ripple);
-				break;
-			default:
-				Error_Handler();
-        }
-		#endif
-    }
+	#ifdef DEBUG_STATE
+	switch (target) {
+		case ADC_INTERNAL_VREF:
+			printf("VDDA %ddmV %d\n", pointerB->voltage, pointerB->ripple);
+			break;
+		case ADC_INTERNAL_TEMP:
+			printf("TEMP %ddC %d\n", pointerB->temperature, pointerB->ripple);
+			break;
+		case ADC_PERSONALITY_ID:
+			printf("PERSONALITY %ddmV %d\n", pointerB->voltage, pointerB->ripple);
+			break;
+		case ADC_BOARD_REV:
+			printf("BOARD REV %ddmV %d\n", pointerB->voltage, pointerB->ripple);
+			break;
+		default:
+			Error_Handler();
+	}
+	#endif
 }
 
 /* callback function for DMA, this function called when DMA peripheral fills whole defined buffer.

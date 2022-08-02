@@ -35,7 +35,7 @@ extern "C" {
 #include "VL53L4CD_api.h"
 #include <stdio.h>
 
-#define DEBUG_STATE
+//#define DEBUG_STATE
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
