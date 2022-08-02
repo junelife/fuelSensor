@@ -328,22 +328,15 @@ void ADC_Calculate(adcToken target, uint8_t offset) {
  * this function is triggered every 2 seconds
  */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hdma_adc1) {
-	if (adcPendingWorkState == ADC_JOB_PENDING_NO) {
-		adcPendingWorkState = ADC_JOB_PENDING_SECOND_HALF;
-	} else {
-		Error_Handler();
-	}
+	adcPendingWorkState = ADC_JOB_PENDING_SECOND_HALF;
+
 }
 
 /* callback function for DMA, this function called when DMA peripheral fills half of defined buffer.
  * this function is triggered every 2 seconds
  */
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef *hdma_adc1) {
-	if (adcPendingWorkState == ADC_JOB_PENDING_NO) {
-		adcPendingWorkState = ADC_JOB_PENDING_FIRST_HALF;
-	} else {
-		Error_Handler();
-	}
+	adcPendingWorkState = ADC_JOB_PENDING_FIRST_HALF;
 }
 
 /* This function configures ADC peripheral channel by channel, Actual peripheral ADC DMA is running on all channel.
