@@ -61,10 +61,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define RS485_RECEIVER_EN_Pin GPIO_PIN_14
+#define RS485_RECEIVER_EN_Pin GPIO_PIN_15
 #define RS485_RECEIVER_EN_GPIO_Port GPIOC
-#define RS485_DRIVER_EN_Pin GPIO_PIN_15
-#define RS485_DRIVER_EN_GPIO_Port GPIOC
 #define AN_BOARD_REV_Pin GPIO_PIN_0
 #define AN_BOARD_REV_GPIO_Port GPIOA
 #define AN_PERSONALITY_ID_Pin GPIO_PIN_1

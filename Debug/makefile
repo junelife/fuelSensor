@@ -61,8 +61,8 @@ all: main-build
 main-build: fuelSensor.elf secondary-outputs
 
 # Tool invocations
-fuelSensor.elf fuelSensor.map: $(OBJS) $(USER_OBJS) C:\Users\SpaceX\Documents\GitHub\fuelSensor\STM32G030F6PX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "fuelSensor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\SpaceX\Documents\GitHub\fuelSensor\STM32G030F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fuelSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+fuelSensor.elf fuelSensor.map: $(OBJS) $(USER_OBJS) C:\Users\bchinbat\OneDrive\ -\ Weber-Stephen\ Products\ LLC\Documents\GitHub\fuelSensor\STM32G030F6PX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "fuelSensor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\bchinbat\OneDrive - Weber-Stephen Products LLC\Documents\GitHub\fuelSensor\STM32G030F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fuelSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
