@@ -21,7 +21,7 @@
 #define LOWER_BYTE(int_x) ((uint8_t) (int_x & 0xff));
 
 
-#define FW_VERSION  02
+#define FW_VERSION  03
 #define HW_VERSION  "0001"
 #define DEVICE_ID   "03"
 

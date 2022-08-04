@@ -109,7 +109,7 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-//    tofInit();
+  tofInit();
    initializeModbusTask();
    initializeHostIpcTask();
   /* USER CODE END 2 */
@@ -119,7 +119,7 @@ int main(void)
     startDownCounterSec(DWN_CNTR_MAIN_LOOP, 4);
     while (1) {
 //    	HAL_IWDG_Refresh(&hiwdg);
-//    	tofTask();
+    	tofTask();
     	ADC_Task();
     	modbusTask();
     	hostIpcTask();
