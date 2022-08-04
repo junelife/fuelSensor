@@ -11,6 +11,7 @@
  */
 
 // Local includes
+#include "common.h"
 #include <tofSensor.h>
 #include "main.h"
 

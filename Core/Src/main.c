@@ -25,6 +25,10 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include "counters.h"
+#include "rs485.h"
+#include "modbus.h"
+#include "hostipc.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -55,10 +59,12 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+#if 0
 int __io_putchar(int ch) {
     HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
     return ch;
 }
+#endif
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -97,27 +103,32 @@ int main(void)
   MX_DMA_Init();
 //  MX_IWDG_Init();
   MX_I2C1_Init();
-  MX_USART1_UART_Init();
+  initializeRs485();
+  //MX_USART1_UART_Init();
   MX_ADC1_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 //    tofInit();
+   initializeModbusTask();
+   initializeHostIpcTask();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
+    startDownCounterSec(DWN_CNTR_MAIN_LOOP, 4);
     while (1) {
 //    	HAL_IWDG_Refresh(&hiwdg);
 //    	tofTask();
     	ADC_Task();
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+    	modbusTask();
+    	hostIpcTask();
     }
   /* USER CODE END 3 */
 }
+
+
+
 
 /**
   * @brief System Clock Configuration

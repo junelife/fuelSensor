@@ -18,6 +18,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include "common.h"
 #include "adc.h"
 
 /* USER CODE BEGIN 0 */
