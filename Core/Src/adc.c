@@ -18,6 +18,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include "common.h"
 #include "adc.h"
 
 /* USER CODE BEGIN 0 */
@@ -304,48 +305,39 @@ void ADC_Calculate(adcToken target, uint8_t offset) {
 			Error_Handler();
     }
 
-    if (1) {
-		#ifdef DEBUG_STATE
-        switch (target) {
-			case ADC_INTERNAL_VREF:
-				printf("VDDA %ddmV %d\n", pointerB->voltage, pointerB->ripple);
-				break;
-			case ADC_INTERNAL_TEMP:
-				printf("TEMP %ddC %d\n", pointerB->temperature, pointerB->ripple);
-				break;
-    		case ADC_PERSONALITY_ID:
-    			printf("PERSONALITY %ddmV %d\n", pointerB->voltage, pointerB->ripple);
-    			break;
-			case ADC_BOARD_REV:
-				printf("BOARD REV %ddmV %d\n", pointerB->voltage, pointerB->ripple);
-				break;
-			default:
-				Error_Handler();
-        }
-		#endif
-    }
+	#ifdef DEBUG_STATE
+	switch (target) {
+		case ADC_INTERNAL_VREF:
+			printf("VDDA %ddmV %d\n", pointerB->voltage, pointerB->ripple);
+			break;
+		case ADC_INTERNAL_TEMP:
+			printf("TEMP %ddC %d\n", pointerB->temperature, pointerB->ripple);
+			break;
+		case ADC_PERSONALITY_ID:
+			printf("PERSONALITY %ddmV %d\n", pointerB->voltage, pointerB->ripple);
+			break;
+		case ADC_BOARD_REV:
+			printf("BOARD REV %ddmV %d\n", pointerB->voltage, pointerB->ripple);
+			break;
+		default:
+			Error_Handler();
+	}
+	#endif
 }
 
 /* callback function for DMA, this function called when DMA peripheral fills whole defined buffer.
  * this function is triggered every 2 seconds
  */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hdma_adc1) {
-	if (adcPendingWorkState == ADC_JOB_PENDING_NO) {
-		adcPendingWorkState = ADC_JOB_PENDING_SECOND_HALF;
-	} else {
-		Error_Handler();
-	}
+	adcPendingWorkState = ADC_JOB_PENDING_SECOND_HALF;
+
 }
 
 /* callback function for DMA, this function called when DMA peripheral fills half of defined buffer.
  * this function is triggered every 2 seconds
  */
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef *hdma_adc1) {
-	if (adcPendingWorkState == ADC_JOB_PENDING_NO) {
-		adcPendingWorkState = ADC_JOB_PENDING_FIRST_HALF;
-	} else {
-		Error_Handler();
-	}
+	adcPendingWorkState = ADC_JOB_PENDING_FIRST_HALF;
 }
 
 /* This function configures ADC peripheral channel by channel, Actual peripheral ADC DMA is running on all channel.

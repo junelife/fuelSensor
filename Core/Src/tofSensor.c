@@ -1,5 +1,5 @@
 /*
- * crc16.c
+ * tofSensor.c
  *
  * Copyright © Weber Stephen Products LLC., 2022 All Rights Reserved No part of this file may be
  * distributed, reproduced, or used by entities other than Stephen Products LLC. without express
@@ -11,6 +11,7 @@
  */
 
 // Local includes
+#include "common.h"
 #include <tofSensor.h>
 #include "main.h"
 
