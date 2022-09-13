@@ -34,7 +34,8 @@ typedef enum
 
 typedef enum
 {
-    MBUS_READ_ID = 1,
+    MBUS_READ_NONE = 0,
+    MBUS_READ_ID,
     MBUS_READ_TYPE,
     MBUS_READ_HELLO,
 	MBUS_READ_TEMPERATURE,
@@ -68,6 +69,7 @@ typedef enum
     MBUS_DEV_TYPE_FREE = 0,
     MBUS_DEV_TYPE_SCALE,
     MBUS_DEV_TYPE_PROBE,
+    MBUS_DEV_TYPE_SMART_VALVE,
     MBUS_DEV_TYPE_UNKNOWN,
 }mbDevType;
 

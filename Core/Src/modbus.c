@@ -19,6 +19,7 @@
 #include "rs485.h"
 #include "modbus.h"
 #include "hostIpc.h"
+#include "hostAlert.h"
 
 uint16_t generateCRC16(uint8_t*, uint16_t);
 void startCrc(void);
@@ -46,13 +47,6 @@ typedef enum modbus_states
     MB_STATE_DATA_CRC_LOW
 } mbStates;
 
-modbusMsgs mbMsg[] =
-{
-   //Message Name     Device Address  Function   data                       TxLen    RxLen
-   //--------------   ---------------  ------   --------------------------  -------- --------
-    { MB_MSG_GET_TEMP,MODBUS_ADD_TEMP,   4,    (uint8_t*) "\x00\x01\x00\x01",   4,    MODBUS_GET_RX_LEN_FROM_DEVICE },
-    { MB_MSG_END,     MB_MSG_END,        0,    (uint8_t*) "",                   0,    0 },
-};
 
 struct modbus_task_vars
 {
@@ -301,27 +295,6 @@ bool modbusTask(void)
     return (busy);
 }
 
-/* Send a Modbus message from the table entry indicated by msg
- *
- */
-bool sendModbusMessage(mbMsgName msg)
-{
-    bool retVal = false;
-    uint8_t msgNdx = 0;
-
-    while (mbMsg[msgNdx].name != MB_MSG_END)
-    {
-        if (mbMsg[msgNdx].name == msg)
-        {
-            buildModbusPacket(mbMsg[msgNdx].address, mbMsg[msgNdx].function,
-                    mbMsg[msgNdx].data, mbMsg[msgNdx].txDataLen);
-            msgNdx++;
-            retVal = true;
-            break;
-        }
-    }
-    return (retVal);
-}
 
 /**********************************************************************
  * Function Name: build_modbus_packet
@@ -333,17 +306,18 @@ bool sendModbusMessage(mbMsgName msg)
  * Return: none
  *
  **********************************************************************/
+uint8_t modbusBuf[40];
 bool buildModbusPacket(uint8_t childAdd, uint8_t fCode, uint8_t *data, uint8_t dataLen)
 {
     bool retVal = false;
 
     uint8_t mBusNdx = 0;
-    uint8_t modbusBuf[40];
     uint16_t crcTemp;
 
     modbusBuf[mBusNdx++] = childAdd;
     modbusBuf[mBusNdx++] = fCode;
-    modbusBuf[mBusNdx++] = dataLen;
+    modbusBuf[mBusNdx++] = dataLen + 1;
+    modbusBuf[mBusNdx++] = getHostReadEvent();
     if (dataLen > 0)
     {
         for (int i = 0; i < dataLen; i++)
@@ -358,7 +332,6 @@ bool buildModbusPacket(uint8_t childAdd, uint8_t fCode, uint8_t *data, uint8_t d
     reStartModbusTask();
 
     if (UART_Transmit_IT(&rs485uart, modbusBuf, mBusNdx) == HAL_OK)
-   //if (HAL_UART_Transmit_IT(&rs485uart, modbusBuf, mBusNdx) == HAL_OK)
     {
         retVal = true;
     }
