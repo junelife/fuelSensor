@@ -51,17 +51,17 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(RS485_RECEIVER_EN_GPIO_Port, RS485_RECEIVER_EN_Pin, GPIO_PIN_SET);
+  //HAL_GPIO_WritePin(RS485_RECEIVER_EN_GPIO_Port, RS485_RECEIVER_EN_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(TOF_XSHUT_GPIO_Port, TOF_XSHUT_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = RS485_RECEIVER_EN_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(RS485_RECEIVER_EN_GPIO_Port, &GPIO_InitStruct);
+ // GPIO_InitStruct.Pin = RS485_RECEIVER_EN_Pin;
+ // GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ // GPIO_InitStruct.Pull = GPIO_NOPULL;
+ // GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ // HAL_GPIO_Init(RS485_RECEIVER_EN_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = TOF_XSHUT_Pin;
