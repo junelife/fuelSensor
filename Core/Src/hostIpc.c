@@ -98,7 +98,7 @@ void mbFunctRead(void)
 	    	ipcVars.mbPktSent = buildModbusPacket(ipcVars.pkt->mbAdd, ipcVars.pkt->fCode, ipcVars.msgBuf, ipcVars.msgLen);
             break;
 	    case MBUS_READ_TYPE:
-	    	ipcVars.msgBuf[ipcVars.msgLen++] = MBUS_DEV_TYPE_SCALE;
+	    	ipcVars.msgBuf[ipcVars.msgLen++] = MBUS_DEV_TYPE_FUEL_SENSOR;
 	    	ipcVars.msgBuf[ipcVars.msgLen++] = 0x16;
 	    	ipcVars.msgBuf[ipcVars.msgLen++] = (uint8_t) FW_VERSION;
 	    	ipcVars.mbPktSent = buildModbusPacket(ipcVars.pkt->mbAdd, ipcVars.pkt->fCode, ipcVars.msgBuf, ipcVars.msgLen);
