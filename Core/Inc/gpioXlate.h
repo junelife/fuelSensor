@@ -38,6 +38,7 @@
 #define I2C_PORT                          GPIOB
 #define I2C_SCL_PIN                            GPIO_PIN_8
 #define I2C_SDA_PIN                            GPIO_PIN_9
+
 #define RS485_RECEIVER_EN_GPIO_Port       GPIOC
 #define RS485_RECEIVER_EN_Pin                  GPIO_PIN_15
 

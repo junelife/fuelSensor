@@ -22,6 +22,7 @@
 
 
 #define FW_VERSION  05
+
 #define HW_VERSION  "0001"
 #define DEVICE_ID   "03"
 
